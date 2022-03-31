@@ -120,7 +120,7 @@ try:
 except ImportError:
     pass
 
-
+# The following is used to convert strings to decimal form on SQL/Postman
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False
 }

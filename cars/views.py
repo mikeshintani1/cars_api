@@ -6,7 +6,7 @@ from .models import Car
 from .serializers import CarSerializer
 from cars import serializers
 
-
+# api view allows for Postman interactions to function correctly!
 @api_view(['GET', 'POST'])
 def cars_list(request):
     
@@ -20,10 +20,10 @@ def cars_list(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+# api view allows for Postman interactions to function correctly!
 @api_view(['GET', 'PUT', 'DELETE'])
 def car_detail(request, pk):
-    
+    # pk is the primary key for indiviudal items unique to postman/SQL
     car = get_object_or_404(Car, pk=pk)
     if request.method == 'GET':
         serializer = CarSerializer(car)
